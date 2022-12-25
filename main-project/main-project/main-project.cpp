@@ -2,6 +2,7 @@
 #include "operations.h"
 #include "file_reader.h"
 #include "constants.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -25,10 +26,33 @@ int main()
             cout << operation[i]->time.sec << '\n';
             cout << operation[i]->transaction.type << ' ';
             cout << operation[i]->transaction.account << ' ';
+            cout << " ...: ";
+            cout << setw(2) << setfill('0') << operation[i]->date.day << "-";
+            cout << setw(2) << setfill('0') << operation[i]->date.month << "-";
+            cout << setw(4) << setfill('0') << operation[i]->date.year << '\n';
+            cout << " ..: ";
+            cout << setw(2) << setfill('0') << operation[i]->time.min << ':';
+            cout << setw(2) << setfill('0') << operation[i]->time.hour << ':';
+            cout << setw(2) << setfill('0') << operation[i]->time.sec << '\n';
+            cout << " ....: ";
+            cout << operation[i]->transaction.type << '\n';
+            if (!strcmp(operation[i]->transaction.type, ""))
+            {
+                cout << " ......: ";
+                cout << operation[i]->transaction.account << '\n';
+            }
+            else if (!strcmp(operation[i]->transaction.type, ""))
+            {
+                cout << " .......: ";
+                cout << operation[i]->transaction.account << '\n';
+            }
+            cout << "...........: ";
             cout << operation[i]->transaction.sum << '\n';
+            cout << "......: ";
             cout << operation[i]->purpose << '\n';
             cout << '\n';
         }
+
         for (int i = 0; i < size; i++)
         {
             delete operation[i];
