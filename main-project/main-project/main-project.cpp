@@ -11,6 +11,7 @@ int main()
 {   
     setlocale(LC_ALL,"ru");
     std::cout << "Вариант 7. Банковские операции. Валерия Михалевич\n";
+    std::cout << "Группа 12\n";
     operation* operation[MAX_FILE_ROWS_COUNT];
     int size;
     try
