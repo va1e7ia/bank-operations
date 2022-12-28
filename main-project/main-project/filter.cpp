@@ -18,7 +18,7 @@ operation** filter(operation* array[], int size, bool (*check)(operation* elemen
 
 bool check_operation_by_type(operation* element)
 {
-	return strcmp(element->transaction.type, "ïðèõîä") == 0;
+	return strcmp(element->transaction.type, "Steam") == 0;
 }
 
 bool check_operation_by_date(operation* element)
